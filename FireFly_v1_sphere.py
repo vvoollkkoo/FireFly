@@ -35,4 +35,4 @@ for l in range(p):
     
 sumX=bestX+sumX
 sumY=sumY+bestY
-print(sumX/p, sumY/p)
+print(sumX/p, sumY/p, 'fitness_func= ', sumX/p**2+sumY/p**2)
