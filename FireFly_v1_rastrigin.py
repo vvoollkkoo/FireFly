@@ -25,12 +25,12 @@ for l in range(p):
                 k=i
               #двигаем всех к лучшему  
             if X[i]!=bestX:
-                X[i]=bestX+BETTA[i]*(X[i]-bestX)+random.uniform(0,1)*ALFA   
+                X[i]=bestX+BETTA[i]*(X[i]-bestX)+random.uniform(-1,1)*ALFA   
             if Y[i]!=bestY:
-                Y[i]=bestY+BETTA[i]*(Y[i]-bestY)+random.uniform(0,1)*ALFA
+                Y[i]=bestY+BETTA[i]*(Y[i]-bestY)+random.uniform(-1,1)*ALFA
           #двигаем лучшего      
-        X[k]=bestX+random.uniform(0,1)*ALFA
-        Y[k]=bestY+random.uniform(0,1)*ALFA
+        X[k]=bestX+random.uniform(-1,1)*ALFA
+        Y[k]=bestY+random.uniform(-1,1)*ALFA
         ALFA=1+ALFA/math.e
     
 sumX=bestX+sumX
