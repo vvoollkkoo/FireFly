@@ -17,7 +17,7 @@ Y=np.array([random.uniform(-5.12,5.12) for i in range(N)])
 for l in range(p):
     for j in range(t):
         for i in range(N):
-            BETTA[i]=1/(X[i]**2+Y[i]**2-10*math.cos(2*math.pi*X[i])-10*math.cos(2*math.pi*Y[i]))
+            BETTA[i]=1/(20+X[i]**2+Y[i]**2-10*math.cos(2*math.pi*X[i])-10*math.cos(2*math.pi*Y[i]))
             if BETTA[i]>best: 
                 best=BETTA[i]
                 bestX=X[i]
@@ -25,7 +25,7 @@ for l in range(p):
                 k=i
               #двигаем всех к лучшему  
             if X[i]!=bestX:
-                X[i]=bestX+BETTA[i]*(X[i]-bestX)+random.uniform(-1,1)*ALFA   
+                X[i]=bestX+BETTA[i]*(X[i]-bestX)+random.uniform(-1,1)*ALFA
             if Y[i]!=bestY:
                 Y[i]=bestY+BETTA[i]*(Y[i]-bestY)+random.uniform(-1,1)*ALFA
           #двигаем лучшего      
@@ -35,4 +35,4 @@ for l in range(p):
     
 sumX=bestX+sumX
 sumY=sumY+bestY
-print(sumX/p, sumY/p)
+print(sumX/p, sumY/p, 'fitness_func= ', 20+sumX/p**2+sumY/p**2-10*math.cos(2*math.pi*sumX/p)-10*math.cos(2*math.pi*sumY/p))
